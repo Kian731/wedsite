@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kian731/kian731.github.io.git"
+    "url": "git+https://github.com/kian731/wedsite.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kian731/kian731.github.io/issues"
+    "url": "https://github.com/kian731/wedsite/issues"
   },
-  "homepage": "https://github.com/kian731/kian731.github.io#readme",
+  "homepage": "https://github.com/kian731/wedsite#readme",
   "dependencies": {
     "gh-pages": "^5.0.0"
   }
