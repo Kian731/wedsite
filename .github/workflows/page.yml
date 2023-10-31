@@ -31,7 +31,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: try to build the project
-        run: npm run build --if-present
+        run: npm run build
 
       # use actions-gh-pages to deploy dist to gh-pages
       - name: Deploy
