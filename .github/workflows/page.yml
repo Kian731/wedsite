@@ -9,7 +9,7 @@ jobs:
     env:
       MY_SECRET   : ${{secrets.commit_secret}}
       USER_NAME   : kian731
-      USER_EMAIL  : kian.963@hotmail.com
+      USER_EMAIL  : kian731@hotmail.com
       PUBLISH_DIR : ./dist
     runs-on: ubuntu-latest
     strategy:
