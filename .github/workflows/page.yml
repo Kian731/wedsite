@@ -1,34 +1,43 @@
-name: Pages
-
+name: deploy gh-pages
 on:
   push:
     branches:
-      - master # 这里只配置了master分支，所以只有推送master分支才会触发以下任务
-
+      - master
 jobs:
-  pages:
+  build:
+    name: Build and deploy gh-pages
+    env:
+      MY_SECRET   : ${{secrets.commit_secret}}
+      USER_NAME   : kian731
+      USER_EMAIL  : kian.963@hotmail.com
+      PUBLISH_DIR : ./dist
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    strategy:
+      matrix:
+        node-version: [10.x]
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js 16.15.0
-        uses: actions/setup-node@v2
-        with:
-          node-version: "16"
-      - name: Cache NPM dependencies
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: ${{ runner.OS }}-npm-cache
-          restore-keys: |
-            ${{ runner.OS }}-npm-cache
-      - name: Install Dependencies
-        run: npm install
-      - name: Build
-        run: npm run build
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm install
+      run: |
+        npm install
+    - name: npm run build
+      run: |
+        npm run gulp m
+        npm run build
+    - name: Commit files
+      run: |
+        cd $PUBLISH_DIR
+        git init
+        git config --local user.name $USER_NAME
+        git config --local user.email $USER_EMAIL
+        git status
+        git remote add origin https://$MY_SECRET@github.com/$GITHUB_REPOSITORY.git
+        git checkout -b gh-pages
+        git add --all
+        git commit -m "deploy to Github pages"
+        git push origin gh-pages -f
+        echo 🤘 deploy gh-pages complete.
