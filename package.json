@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "react-scripts build",
+    "start": "webpack-react-vue-spa-awesome-config start",
+    "build": "webpack-react-vue-spa-awesome-config build",
     "deploy": "gh-pages -d src"
   },
   "repository": {
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/kian731/wedsite#readme",
   "dependencies": {
+    "@masx200/webpack-react-vue-spa-awesome-config": "https://github.com/masx200/webpack-react-vue-spa-awesome-config.git",
     "gh-pages": "^5.0.0"
   },
   "devDependencies": {
