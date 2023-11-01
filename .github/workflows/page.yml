@@ -24,10 +24,9 @@ jobs:
     - name: npm install
       run: |
         npm install
-    - name: npm run build
+    - name: npm run deploy
       run: |
-        npm run gulp m
-        npm run build
+        npm run deploy
     - name: Commit files
       run: |
         cd $PUBLISH_DIR
