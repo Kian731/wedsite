@@ -6,7 +6,11 @@ on:
 jobs:
   build:
     name: deploy gh-pages
-   
+    env:
+      MY_SECRET   : ${{secrets.commit_secret}}
+      USER_NAME   : kian731
+      USER_EMAIL  : kian.963@hotmail.com
+      PUBLISH_DIR : ./dist
     runs-on: ubuntu-latest
    
     steps:
@@ -21,4 +25,8 @@ jobs:
     
     - name: Commit files
       run: |
+        cd $PUBLISH_DIR
+        git init
+        git config --local user.name $USER_NAME
+        git config --local user.email $USER_EMAIL
         npm run deploy
