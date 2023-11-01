@@ -1,32 +1,29 @@
-name: deploy gh-pages
+name: page
+
 on:
   push:
-    branches:
-      - main
-jobs:
-  build:
-    name: deploy gh-pages
-    env:
-      MY_SECRET   : ${{secrets.commit_secret}}
-      USER_NAME   : kian731
-      USER_EMAIL  : kian.963@hotmail.com
-      PUBLISH_DIR : ./dist
-    runs-on: ubuntu-latest
-   
-    steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: npm install
-      run: |
-        npm install
+    branches: [main]
     
-    - name: Commit files
-      run: |
-        git init
-        git config --local user.name $USER_NAME
-        git config --local user.email $USER_EMAIL
-        git remote add origin https://github.com/kian731/wedsite.git
-        npm run deploy
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build
+        uses: actions/setup-node@master
+        with:
+          node-version: '16.x'
+      - run: npm install 
+      - run: npm run build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3 
+        with:
+          publish_dir: ./dist 
+          github_token: ${{ secrets.COMMIT_SECRET }} 
+          user_name: ${{ secrets.MY_USER_NAME }}
+          user_email: ${{ secrets.MY_USER_EMAIL }}
+          commit_message: 自动部署 
