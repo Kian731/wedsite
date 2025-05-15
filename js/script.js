@@ -5,6 +5,6 @@ function info(){
     document.body.main.appendChild(para);
 };
 
-const date = new Date()
+var date = new Date()
 document.getElementById(today).innerHTML=date;
 
