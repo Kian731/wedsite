@@ -2,7 +2,7 @@
 function info(){    
     const para = document.createElement("p");
     para.innerHTML = "更多資訊在這裡";
-    document.body.main.appendChild(para);
+    document.getElementById(more).appendChild(para);
 };
 
 var date = new Date()
