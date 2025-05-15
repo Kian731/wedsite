@@ -1,10 +1,15 @@
 body {
-    background-color: rgb(255, 245, 236);
-    color: rgb(87, 87, 87);
-  }
-  main{
+  font-family: "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+  main {
     background-color: #fff;
-  }
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
   p{
     font-size: 15px;
     margin: 5px 0 ;
@@ -22,6 +27,12 @@ body {
   nav li:hover{
     color: rgb(73, 55, 44);
   }
+
+  .info-text {
+    color: #734f30;
+    font-weight: bold;
+    margin-top: 10px;
+}
 
   @media (max-width:1024px){
     nav li{width: 100px;}

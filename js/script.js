@@ -1,10 +1,15 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("infoBtn");
+    const main = document.querySelector("main");
 
+    btn.addEventListener("click", function () {
+        const para = document.createElement("p");
+        para.textContent = "更多資訊在這裡";
+        para.classList.add("info-text");
+        main.appendChild(para);
+    });
 
-function info() {    
-    const para = document.createElement("p");
-    para.innerHTML = "更多資訊在這裡";
-    document.querySelector("main").appendChild(para);
-}
-
-var date = new Date();
-document.getElementById("today").innerHTML = date.toLocaleDateString(); // 美化日期格式
+    // 日期顯示
+    const today = new Date().toLocaleDateString();
+    document.getElementById("today").textContent = today;
+});
