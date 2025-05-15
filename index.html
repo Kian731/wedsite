@@ -8,11 +8,27 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>hi.my Frist Web</h1>
-    <hr>
-    <p>test1 測試</p>
-    <p>test 測試2</p>
-    <p>test313</p>
-    <img style="max-width: 600px;width:100%" src="img/banner.JPG">
+  <header>
+    <h1>「日光咖啡 Sunlight Café」</h1>
+
+    <nav>
+      <li>首頁</li>
+      <li>關於我們</li>
+      <li>菜單介紹</li>
+      <li>聯絡我們</li>
+    </nav>
+  </header>
+  <main>
+    <img src="images/coffee.JPG" alt="咖啡館">
+    <!-- 點擊後用 JavaScript 顯示額外資訊（模擬互動功能） -->
+    <button id="more" onclick="info()">「查看更多」</button>
+    
+  </main>
+  <footer>
+    <!-- 加上今日日期（用 JavaScript 自動顯示） -->
+    <p id="date"></p>
+    <p>© 2025 Sunlight Café）</p>
+  </footer>
+    
 </body>
 </html>
