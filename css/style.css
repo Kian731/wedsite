@@ -4,6 +4,7 @@ body{
     color: rgb(255, 117, 170);
     font-family: "Noto Sans TC";
     margin: 0;
+    text-align: center;
 }
 
 nav ul{
