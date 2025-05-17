@@ -20,7 +20,7 @@ nav li{
     transition: all 500ms;
 }
 nav li:hover{
-    color: rgb(236, 129, 170);
+    color: rgb(211, 25, 96);
 }
 
 main img{
@@ -29,10 +29,22 @@ main img{
     margin: 50px auto;
     display: block;
 }
+button{
+    border: none;
+    padding: 7px 30px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #f580b8;
+    transition: all 500ms;    
+}
+button:hover{
+    background-color: #da297e;
+}
 footer{
     background-color: rgb(255, 117, 170);
     color: #fff;
-    padding: 30px 0;
+    padding: 20px 0;
+    margin-top: 50px;
 }
 
 @media (max-width:1024px){
