@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,32 +5,52 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
-            <h1>甜心工坊 SweetHeart</h1>
+            <h1>旅人誌 Traveler Blog</h1>
             <nav>
                 <ul>
                     <li>首頁</li>
-                    <li>產品介紹</li>
-                    <li>門市資訊</li>
+                    <li>旅遊日誌</li>
+                    <li>相簿</li>
                     <li>聯絡我們</li>
                 </ul>
             </nav>
         </header>
         <main>
-            <img src="images/cake.png" alt="甜點,蛋糕">
-            <p>「每一口，都是幸福的味道」</p>
-            <!-- 點擊後新增一段文字「預約甜點試吃請洽門市」 -->
-            <button id="moreBtn">了解詳情</button>
+            <div class="row">
+                <div>
+                    <img src="images/travel1.png" alt="九分">
+                    <h2>九分老街</h2>
+                    <p>九分古老街道，旅遊必去景點！</p>
+                </div>
+                <div>
+                    <img src="images/travel2.png" alt="十分">
+                    <h2>十分老街</h2>
+                    <p>鐵道老街，以放天燈著名！</p>
+                </div>
+                <div>
+                    <img src="images/travel3.png" alt="海邊">
+                    <h2>北海岸</h2>
+                    <p>想體驗海風、海邊必去景點！</p>
+                </div>
+            </div>
+            <form>
+                <h3>訪客留言</h3>
+                <input type="text" name="name" placeholder="姓名">
+                <input type="text" name="email" placeholder="Email">
+                <input type="text" name="comment" placeholder="留言">
+                <button id="submit">送出留言</button>
+            </form>
         </main>
         <footer>
-            <!-- 格式：2025/05/15 -->
-            <p><span id="today"></span></p>
-            <p>© 2025 SweetHeart All rights reserved.</p>
+            <p>「歡迎來信分享你的旅遊故事」</p>
+            <p id="today"></p>
         </footer>
+
         <script type="text/javascript" src="js/script.js"></script>
     </body>
 </html>

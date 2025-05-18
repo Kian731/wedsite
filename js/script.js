@@ -1,18 +1,23 @@
+document.addEventListener("DomContentLoaded",function(){
+    const submit = document.getElementById("submit");
+    const name = document.getElementsByName("name");
+    const email = document.getElementsByName("email");
+    const comment = document.getElementsByName("comment");
 
-document.addEventListener("DOMContentLoaded", function () {
-    const btn = document.getElementById("moreBtn");
-    const main = document.querySelector("main");
+    submit.addEventListener("click",function(){
 
-    btn.addEventListener("click", function () {
-        const para = document.createElement("p");
-        para.textContent = "預約甜點試吃請洽門市";
-        para.classList.add("info-text");
-        main.appendChild(para);
+        if([name.value == ""]||[email.value == ""]||[comment.value == ""]){
+            if(name.value == ""){alert("請輸入姓名");}
+            if(email.value == ""){alert("請輸入Email");}
+            if(comment.value == ""){alert("請輸入留言");}                       
+        }else{
+            name.value ="";
+            email.value ="";
+            comment.value = "";
+            alert("留言已送出，感謝您的分享！");
+        }
     });
 
-    // 日期顯示
     const today = new Date().toLocaleDateString();
     document.getElementById("today").textContent = today;
 });
-
-

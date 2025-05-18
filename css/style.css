@@ -1,53 +1,65 @@
 
 body{
-    background-color: rgb(250, 214, 242);
-    color: rgb(255, 117, 170);
+    color: rgb(80, 170, 255);
+    background-color: #fff;
     font-family: "Noto Sans TC";
-    margin: 0;
     text-align: center;
 }
 
 nav ul{
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     padding: 0;
 }
 nav li{
     list-style-type: none;
-    padding: 5px 15px;    
+    padding: 5px 15px;
     transition: all 500ms;
 }
 nav li:hover{
-    color: rgb(211, 25, 96);
+    color: #fff;
+    background-color: rgb(49, 137, 214);
 }
 
-main img{
-    max-width: 600px;
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.row>div{
+    width: calc(33% - 20px);
+    padding: 10px;
+}
+.row img{
     width: 100%;
-    margin: 50px auto;
-    display: block;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0,0.2);
 }
-button{
-    border: none;
-    padding: 7px 30px;
-    border-radius: 5px;
-    color: #fff;
-    background-color: #f580b8;
-    transition: all 500ms;    
+form input{
+    transition: all 500ms;
+    padding: 5px 20px;    
+    border-radius: 7px;
 }
-button:hover{
-    background-color: #da297e;
+form input:hover{
+    border: 1px solid #72aefc;
 }
-footer{
-    background-color: rgb(255, 117, 170);
-    color: #fff;
-    padding: 20px 0;
-    margin-top: 50px;
+form input:focus{
+    border: 1px solid #326fbe;
 }
+
 
 @media (max-width:1024px){
-    nav li{width: 100%;}    
+    nav ul{
+        flex-wrap:wrap;
+        flex-direction: column;
+    }
+    nav li{width: 100%;}
+    .row{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .row>div{width: calc(100% - 20px);}
 }
+
 
