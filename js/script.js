@@ -4,6 +4,9 @@ document.addEventListener("DomContentLoaded",function(){
     const email = document.getElementsByName("email");
     const comment = document.getElementsByName("comment");
 
+    const today = new Date().toLocaleDateString();
+    document.getElementById("today").textContent = today;
+    
     submit.addEventListener("click",function(){
         if([name.value == ""]||[email.value == ""]||[comment.value == ""]){
             if(name.value == ""){alert("請輸入姓名");}
@@ -17,6 +20,4 @@ document.addEventListener("DomContentLoaded",function(){
         }
     });
 
-    const today = new Date().toLocaleDateString();
-    document.getElementById("today").textContent = today;
 });
