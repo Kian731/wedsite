@@ -5,7 +5,6 @@ document.addEventListener("DomContentLoaded",function(){
     const comment = document.getElementsByName("comment");
 
     submit.addEventListener("click",function(){
-
         if([name.value == ""]||[email.value == ""]||[comment.value == ""]){
             if(name.value == ""){alert("請輸入姓名");}
             if(email.value == ""){alert("請輸入Email");}
