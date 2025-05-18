@@ -38,7 +38,7 @@ nav li:hover{
 }
 form input{
     display: block;
-    margin: 7px auto;
+    margin: 10px auto;
     transition: all 500ms;
     padding: 5px 20px;    
     border-radius: 7px;
